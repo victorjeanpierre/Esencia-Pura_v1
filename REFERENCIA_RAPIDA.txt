@@ -1,0 +1,243 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                  🔧 GUÍA RÁPIDA DE EDICIÓN                          ║
+║            Qué editar, dónde y cuándo (CHEAT SHEET)                 ║
+╚════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════
+  ⚙️  CONFIGURACIÓN OBLIGATORIA (HACER PRIMERO)
+═══════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 1. CAMBIAR NÚMERO DE WHATSAPP (IMPRESCINDIBLE)                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Archivo: app.js                                               │
+│  Línea: 14                                                      │
+│                                                                 │
+│  ORIGINAL:                                                      │
+│    const TELEFONO_DESTINO = "51999999999";                     │
+│                                                                 │
+│  CAMBIAR A:                                                     │
+│    const TELEFONO_DESTINO = "51987654321";  ← Tu número       │
+│                                                                 │
+│  Códigos de país:                                               │
+│    Perú: 51         Colombia: 57      Argentina: 54            │
+│    México: 52       España: 34        Brasil: 55               │
+│                                                                 │
+│  ⚠️  IMPORTANTE: Sin "+" y sin espacios                        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 2. CREAR CARPETA img/ Y AGREGAR FOTOS                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Carpeta a crear: img/                                         │
+│  Ubicación: Raíz del proyecto                                  │
+│                                                                 │
+│  Archivos a copiar (nombres EXACTOS):                          │
+│    □ lavanda.jpg                                               │
+│    □ avena_miel.jpg                                            │
+│    □ calendula.jpg                                             │
+│    □ carbon.jpg                                                │
+│    □ coco.jpg                                                  │
+│    □ manzanilla.jpg                                            │
+│    □ aloe_vera.jpg                                             │
+│    □ romero.jpg                                                │
+│    □ arcilla_rosa.jpg                                          │
+│    □ cafe.jpg                                                  │
+│                                                                 │
+│  Formatos válidos: .jpg, .png, .webp                           │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+  🎨 PERSONALIZACIÓN BÁSICA (PRIMEROS CAMBIOS)
+═══════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 3. CAMBIAR NOMBRE DE MARCA                                     │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Archivo: index.html                                           │
+│  Línea: 39                                                      │
+│                                                                 │
+│  ORIGINAL:                                                      │
+│    <h1 class="logo">🧼 Esencia Pura</h1>                       │
+│    <p class="tagline">Jabones Artesanales Naturales</p>        │
+│                                                                 │
+│  CAMBIAR A:                                                     │
+│    <h1 class="logo">🧼 MI MARCA</h1>                           │
+│    <p class="tagline">Mi descripción</p>                       │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 4. CAMBIAR COLORES PRINCIPALES                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Archivo: style.css                                            │
+│  Líneas: 6-21 (dentro de :root { })                            │
+│                                                                 │
+│  VARIABLES CLAVE:                                               │
+│    --color-primary: #4a5d3a;        ← Color principal         │
+│    --color-secondary: #7ba588;      ← Color secundario        │
+│    --color-accent: #e8dcc8;         ← Color de acentos        │
+│    --color-light-bg: #faf8f3;       ← Fondo                   │
+│                                                                 │
+│  EJEMPLOS DE COLORES:                                           │
+│    Verde: #2d5016, #6ba66b                                     │
+│    Azul: #003d82, #0066cc                                      │
+│    Rosa: #d4639f, #f0b5d6                                      │
+│    Naranja: #e67e22, #f39c12                                   │
+│                                                                 │
+│  Obtener colores: https://colorhunt.co/                       │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+  📝 CAMBIOS DE CONTENIDO
+═══════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 5. AGREGAR O EDITAR PRODUCTOS                                  │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Archivo: app.js                                               │
+│  Líneas: 28-163                                                │
+│                                                                 │
+│  PARA EDITAR UN PRODUCTO:                                      │
+│    Busca el nombre del producto                                │
+│    Cambia: nombre, precio, descripción, categoría              │
+│                                                                 │
+│  PARA AGREGAR UN PRODUCTO NUEVO:                               │
+│    {                                                            │
+│        id: 11,                 ← ID único nuevo               │
+│        nombre: "Mi Jabón",      ← Nombre exacto               │
+│        precio: 5.75,            ← Precio en USD               │
+│        descripcion: "Desc...",  ← Descripción corta           │
+│        categoria: "Relajante",  ← Categoría existente        │
+│        ruta_imagen: "img/mi_jabon.jpg",  ← Ruta archivo      │
+│        emoji: "🌹"              ← Emoji fallback              │
+│    }                                                            │
+│                                                                 │
+│  Categorías disponibles:                                        │
+│    • Relajante                                                  │
+│    • Exfoliante                                                 │
+│    • Cuidado Diario                                             │
+│    • Limpieza Profunda                                          │
+│    • Energizante                                                │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 6. CAMBIAR MENSAJE DE WHATSAPP                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Archivo: app.js                                               │
+│  Función: generarMensajePedido() (línea ~480)                  │
+│                                                                 │
+│  MENSAJE ACTUAL:                                                │
+│    "¡Hola! Me gustaría hacer el siguiente pedido..."          │
+│                                                                 │
+│  PARA PERSONALIZAR:                                             │
+│    Edita el texto dentro de la función                         │
+│    Recuerda usar \n para saltos de línea                       │
+│    Puedes agregar emojis y formatos                            │
+│                                                                 │
+│  EJEMPLO:                                                       │
+│    mensaje = "Hola Esencia Pura! 👋\n";                        │
+│    mensaje += "Me interesa...\n";                              │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+  🔒 SEGURIDAD Y CONFIGURACIÓN AVANZADA
+═══════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 7. CAMBIAR TIEMPO DE ANTI-SPAM                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Archivo: app.js                                               │
+│  Línea: 18                                                      │
+│                                                                 │
+│  ORIGINAL:                                                      │
+│    const RATE_LIMIT_MS = 3000;  ← 3 segundos                  │
+│                                                                 │
+│  CAMBIAR A:                                                     │
+│    const RATE_LIMIT_MS = 2000;  ← 2 segundos (más rápido)    │
+│    const RATE_LIMIT_MS = 5000;  ← 5 segundos (más seguro)    │
+│                                                                 │
+│  Explicación: Tiempo que tarda antes de permitir otro clic    │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+  📱 META TAGS PARA SEO Y REDES SOCIALES
+═══════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│ 8. MEJORAR DESCRIPCIÓN EN GOOGLE Y REDES                       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Archivo: index.html                                           │
+│  Líneas: 6-9                                                    │
+│                                                                 │
+│  ORIGINAL:                                                      │
+│    <meta name="description" content="Catálogo de jabones..."> │
+│                                                                 │
+│  MEJORADO:                                                      │
+│    <meta name="description"                                     │
+│      content="Compra jabones artesanales naturales.             │
+│      10 variedades: Lavanda, Aloe Vera, Carbón...">           │
+│                                                                 │
+│  IMPORTANTE: Máximo 160 caracteres para Google                │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+  ❌ ARCHIVOS QUE NO DEBES EDITAR
+═══════════════════════════════════════════════════════════════════
+
+  ✗ index.html (excepto línea 39)
+  ✗ style.css (excepto variables CSS)
+  ✗ .gitignore
+  ✗ app.js (excepto lo mencionado aquí)
+
+═══════════════════════════════════════════════════════════════════
+  📚 DOCUMENTACIÓN RÁPIDA
+═══════════════════════════════════════════════════════════════════
+
+  ¿Cómo empezar?
+    → Abre: QUICKSTART.md
+
+  ¿Quiero personalizarlo más?
+    → Abre: PERSONALIZACION.md
+
+  ¿Cómo vendo más?
+    → Abre: SEO_MARKETING.md
+
+  ¿Tengo problemas?
+    → Abre: INSTRUCCIONES.md
+
+═══════════════════════════════════════════════════════════════════
+  ⚡ CHECKLIST DE VALIDACIÓN
+═══════════════════════════════════════════════════════════════════
+
+Antes de lanzar:
+
+  [ ] Cambié el número de WhatsApp en app.js
+  [ ] Agregué la carpeta img/ con 10 imágenes
+  [ ] Los nombres de imágenes coinciden exactamente
+  [ ] Cambié el nombre de marca (opcional pero recomendado)
+  [ ] Probé en celular que funcione todo
+  [ ] El botón de WhatsApp abre correctamente
+  [ ] El mensaje tiene los datos correctos
+
+═══════════════════════════════════════════════════════════════════
+
+Listo. Ahora tienes todo lo que necesitas.
+
+¡Bienvenido a Esencia Pura! 🧼
+

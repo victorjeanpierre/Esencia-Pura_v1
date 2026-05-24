@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de jabones artesanales Esencia Pura - Productos naturales de calidad">
+    <meta name="theme-color" content="#4a5d3a">
+    <title>Esencia Pura - Jabones Artesanales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🧼 Esencia Pura</h1>
+                <p class="tagline">Jabones Artesanales Naturales</p>
+            </div>
+        </header>
+
+        <!-- FILTRO POR CATEGORÍA -->
+        <nav class="category-filter">
+            <button class="filter-btn active" data-category="todas">
+                Todas
+            </button>
+            <button class="filter-btn" data-category="Relajante">
+                Relajante
+            </button>
+            <button class="filter-btn" data-category="Exfoliante">
+                Exfoliante
+            </button>
+            <button class="filter-btn" data-category="Cuidado Diario">
+                Cuidado Diario
+            </button>
+            <button class="filter-btn" data-category="Limpieza Profunda">
+                Limpieza Profunda
+            </button>
+            <button class="filter-btn" data-category="Energizante">
+                Energizante
+            </button>
+        </nav>
+
+        <!-- CONTENEDOR DE PRODUCTOS -->
+        <main class="products-grid" id="productosContainer">
+            <!-- Los productos se generarán dinámicamente con JavaScript -->
+        </main>
+    </div>
+
+    <!-- STICKY FOOTER - CARRITO Y WHATSAPP -->
+    <footer class="sticky-footer">
+        <div class="footer-content">
+            <div class="cart-info">
+                <span class="cart-count">
+                    <span id="cartCount">0</span> artículos
+                </span>
+                <span class="cart-total">
+                    S/ <span id="cartTotal">0.00</span>
+                </span>
+            </div>
+            <button id="whatsappBtn" class="whatsapp-btn" disabled>
+                📲 Enviar Pedido a WhatsApp
+            </button>
+        </div>
+    </footer>
+
+    <!-- Modal de confirmación de envío -->
+    <div id="loadingModal" class="modal hidden">
+        <div class="modal-content">
+            <p id="modalMessage">Preparando tu pedido...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
