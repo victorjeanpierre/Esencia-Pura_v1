@@ -104,7 +104,7 @@ const BD_PRODUCTOS = [
     {
         id: 8,
         nombre: "Jabón Manzanilla Relajante",
-        precio: 6.00,
+        precio: 7.00,
         descripcion: "Calma y relaja. Perfecto para antes de dormir. Alivia la irritación.",
         categoria: "Relajante",
         ruta_imagen: "img/manzanilla.jpg",
@@ -122,7 +122,7 @@ const BD_PRODUCTOS = [
     {
         id: 10,
         nombre: "Jabón Lavanda Pura",
-        precio: 6.00,
+        precio: 7.00,
         descripcion: "Relajante y desestresante. Aroma natural calmante para toda la familia.",
         categoria: "Relajante",
         ruta_imagen: "img/lavanda.jpg",
@@ -371,8 +371,8 @@ function crearTarjetaProducto(producto, cantidad) {
     const categoriaSanitizada = sanitizarTexto(producto.categoria);
     
     card.innerHTML = `
-        <div class="product-image placeholder">
-            ${producto.emoji}
+        <div class="product-image">
+            <img src="${producto.ruta_imagen}" alt="${nombreSanitizado}" loading="lazy">
         </div>
         <div class="product-content">
             <span class="product-category">${categoriaSanitizada}</span>
@@ -387,6 +387,14 @@ function crearTarjetaProducto(producto, cantidad) {
         </div>
     `;
     
+    // Si la imagen no carga, mostrar emoji como placeholder
+    const contenedorImagen = card.querySelector('.product-image');
+    const imgProducto = card.querySelector('.product-image img');
+    imgProducto.addEventListener('error', () => {
+        contenedorImagen.classList.add('placeholder');
+        contenedorImagen.textContent = producto.emoji;
+    });
+
     // Asignar event listeners a botones
     const btnMenos = card.querySelector('.minus-btn');
     const btnMas = card.querySelector('.plus-btn');
